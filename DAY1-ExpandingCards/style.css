@@ -1,0 +1,49 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+.item {
+    flex: 0.5;
+    position: relative;
+    height: 80vh;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    transition: all 500ms ease-out;
+}
+
+.item h2{
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    opacity: 0;
+}
+
+.select {
+    flex: 5;
+}
+
+.item.select h2 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+
+
+
