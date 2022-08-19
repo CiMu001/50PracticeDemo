@@ -1,0 +1,83 @@
+:root {
+    --border-fill: #3498db;
+    --border-empty: #e0e0e0;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.progress-box {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.progress-box::before {
+    content: '';
+    position: absolute;
+    background-color: var(--border-empty);
+    top:50%;
+    left: 0px;
+    width: 100%;
+    height: 4px;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress {
+    position: absolute;
+    background-color: var(--border-fill);
+    top:50%;
+    left: 0px;
+    width: 0%;
+    height: 4px;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 400ms ease;
+}
+
+.step {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--border-empty);
+    background-color: #FFF;
+    transition: 400ms ease;
+}
+
+.step.active {
+    border-color: var(--border-fill);
+}
+
+.step:hover {
+    cursor: pointer;
+}
+
+.btn {
+    background-color: var(--border-fill);
+    border: 0;
+    color: #FFF;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.btn:disabled {
+    background-color: var(--border-empty);
+    cursor: not-allowed;
+}
