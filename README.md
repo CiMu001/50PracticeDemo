@@ -22,3 +22,6 @@
     div层级使用，比如项目中导航旋转开关需要用absolute定位来固定整体位置，但又需要设置为relative来实现icon的浮动式布局进行偏移，所以设置了一个外层的div控制开关在页面中的整体位置，设置了一个圆div来开启子项icon的absolute定位
     预设活动的class，在希望活动的时候添加class属性来实现活动效果
     fontawesome开源图标库的使用
+
+## day 4 隐藏式搜索框
+    此demo比较简单，使用css伪类即可实现
