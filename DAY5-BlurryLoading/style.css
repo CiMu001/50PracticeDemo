@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.container {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container img {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.loading-txt {
+    font-size: 52px;
+    color: rgb(255, 255, 255);
+}
