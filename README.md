@@ -28,6 +28,12 @@
 
 
 ## day 5 模糊背景加载
-    css filter属性blur实现图片的模糊虚化，filter还可以实现亮度、对比度阴影、灰度、色相旋转、图片反转、透明度、饱和度的调整
-    setInterval方法的使用： 方法会重复执行一个函数，第一个参数为函数，第二个参数是时间间隔，取消执行需要使用clearInterval方法，传递要取消的setInterval
-    图片全屏背景的展示css设置
+    1. css filter属性blur实现图片的模糊虚化，filter还可以实现亮度、对比度阴影、灰度、色相旋转、图片反转、透明度、饱和度的调整
+    2. setInterval方法的使用： 方法会重复执行一个函数，第一个参数为函数，第二个参数是时间间隔，取消执行需要使用clearInterval方法，传递要取消的setInterval
+    3. 图片全屏背景的展示css设置
+
+## day 6 监控滚动显示盒子动画
+    1. window.innerHeight接口获取浏览器视窗的高度，给滚动条添加监听函数，通过getBoundingClientRect.top来获取box关于视窗的top值，根据top值小于浏览器视窗的高度来判断展示
+    2. box的top值不能直接和浏览器视窗的高度进行判读，要留出适当的空间来进行过度动画的展示
+    3. nth-of-type(even)代表偶数的子项
+    4. 展示和隐藏通过transition transform的x轴上偏移实现

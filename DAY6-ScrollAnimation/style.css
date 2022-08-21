@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 0;
+}
+
+.container h1 {
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.item {
+    width: 350px;
+    height: 200px;
+    background-color: cornflowerblue;
+    margin: 20px 0px;
+    border-radius: 25px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 200px;
+    font-size: 36px;
+    color: #fff;
+    transform: translateX(400%);
+    transition: transform 400ms ease;
+}
+
+.item:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.item.show {
+    transform: translateX(0);
+}
