@@ -43,3 +43,8 @@
     2. mouseenter的鼠标移动上动作监听和mouseleave鼠标移开动作的监听
     3. 通给a,b的父级添加一个class来实现在a悬停时同时改变a和b的css属性
     4. 存在问题，在频繁触发事件的时候会明显的有cpu和gpu不正常的高性能运行的情况，不知道是什么问题目前...
+
+## day 8 登录表单文字波浪
+    1. 练习了form表单的简单使用，input和label标签+margin偏移实现文字提示输出栏的实现
+    2. innerHTML获取元素文本内容，map循环遍历且map会返回一个数组，join把数组中的所有元素转换一个字符串
+    3. 通分别添加transition-delay的值来实现波浪效果，cubic-bezier可以改变动画运动的速度变化
