@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    background-color: cadetblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.container .item {
+    padding: 30px;
+    margin: 20px;
+    background-color: #cf4e1d;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.container .item:hover {
+    opacity: 0.8;
+}

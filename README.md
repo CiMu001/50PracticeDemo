@@ -26,7 +26,6 @@
 ## day 4 隐藏式搜索框
     此demo比较简单，使用css伪类即可实现
 
-
 ## day 5 模糊背景加载
     1. css filter属性blur实现图片的模糊虚化，filter还可以实现亮度、对比度阴影、灰度、色相旋转、图片反转、透明度、饱和度的调整
     2. setInterval方法的使用： 方法会重复执行一个函数，第一个参数为函数，第二个参数是时间间隔，取消执行需要使用clearInterval方法，传递要取消的setInterval
@@ -48,3 +47,12 @@
     1. 练习了form表单的简单使用，input和label标签+margin偏移实现文字提示输出栏的实现
     2. innerHTML获取元素文本内容，map循环遍历且map会返回一个数组，join把数组中的所有元素转换一个字符串
     3. 通分别添加transition-delay的值来实现波浪效果，cubic-bezier可以改变动画运动的速度变化
+
+## day 9 声音按钮
+    1. 练习audio标签的使用，给按钮绑定点击事件，点击触发指定声音的.play()方法播放
+    2. 存在多个按钮声音在点击下一个时先通过.pause()方法暂停所有声音并修改currentTime时间轴到0
+
+## day 10 随机情话
+    1. 练习了fetch的使用，是用来Javascript中发送HTTP请求，采用了Promise对象，使用起来更加简洁，模块化设计API分散在Response、Request、Headers对象上
+    详细教程参考https://www.ruanyifeng.com/blog/2020/12/fetch-tutorial.html
+    
