@@ -55,4 +55,7 @@
 ## day 10 随机情话
     1. 练习了fetch的使用，是用来Javascript中发送HTTP请求，采用了Promise对象，使用起来更加简洁，模块化设计API分散在Response、Request、Headers对象上
     详细教程参考https://www.ruanyifeng.com/blog/2020/12/fetch-tutorial.html
+
+## day 11 键盘按键监听
+    1. 练习监听keydown,  按键按下后回调函数可以接收一个KeyboardEvent，对象中有key（按键值）、keyCode（按键ASCII值）、code（物理按键代码）等其他关于按下事件的属性。
     
