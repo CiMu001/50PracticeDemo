@@ -58,4 +58,8 @@
 
 ## day 11 键盘按键监听
     1. 练习监听keydown,  按键按下后回调函数可以接收一个KeyboardEvent，对象中有key（按键值）、keyCode（按键ASCII值）、code（物理按键代码）等其他关于按下事件的属性。
+
+## day 12 折叠面板
+    1. 练习折叠面板的实现，通过添加active Class，在acitve下对展开部分进行dispaly属性设置为非none；在折叠情况下对需要折叠的部分dispaly设置为none进行隐藏
+    2. 练习了对页面的布局，经验增加~
     
