@@ -68,4 +68,11 @@
     2. 练习了setInterval和setTimeout的使用，通过setInterval循环煤100ms随机选中一个事件进行高亮显示，给定一个循环次数，再设置一个次数*100的定时器，在循环次数结束后关闭setInterval，实现选中来回跳动的效果
     3. 实现随机选中数组中每一个元素：通过Math.random方法生成一个0-1之间的随机小数 * 数组的长度后取整即可
 
+## day 14 滚动导航切换动画
+    1. 通过css实现×号的显示，transform: rotate的使用练习
+    2. 通过transform: rotate旋转和width的变化实现滚动叉号滚动效果
+    3. transition过度，linear：相同速度；ease：慢开始-加速-慢结束；ease-in:慢开始；ease-out:慢结束；（ease下都是均匀加速）
+    4. background-image: linear-gradient, 实现渐变效果，to属性可以设置渐变方向（上下左右）；
+
 ## day 15 数量累加展示
+    1. 通过在标签上写自定义属性传递值，getAttribute来接收，写一个方法，判断当前值是否小于总数，小于就嵌套循环方法来实现计数累加效果
