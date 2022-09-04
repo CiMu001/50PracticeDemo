@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+    transition: background-color 0.5s;
+}
+
+body.dark {
+    background-color: #111;
+    color: #fff;
+}
+
+button{
+    top: 50px;
+    right: 50px;
+    position: fixed;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    background-color: black;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 0;
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.pointer {
+    position: absolute;
+    height: 3px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center left;
+    background-color: #111;
+    transition: transform 0.5s ease-in;
+}
+
+.center-point {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    border-radius: 50%;
+    border: 2px solid #e74c3c;
+}
+
+.hour {
+    width: calc(30%);
+}
+
+.minute {
+    width: calc(40%);
+}
+
+.second {
+    width: calc(50%);
+    background-color: #e74c3c;
+}
+
+body.dark button, body.dark .hour, body.dark .minute, body.dark .center-point {
+    background-color: #fff;
+    color: #111;
+}
