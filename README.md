@@ -1,4 +1,4 @@
-# ***前端开发练手50个demo ~~***
+# 前端开发练手50个demo
 ## 开发经验记录
 ## day 1 卡片切换
     <!doctype html>是个什么？
@@ -107,4 +107,8 @@
     2. 拖拽元素监听:dragstart, dragend, 分别监听开始和结束, 使用setTiemout的执行顺序特性来实现拖拽开始后该元素本体消失,只显示拖拽中的
     3. 元素可以通过dragover,dragenter,dragleave,drop监听拖拽时的在元素之上,进入元素,离开元素和放下;
     4. dragOver的默认行为是: 重置当前的拖拽动作为"none";  dragEnter默认动作是: 取消拖动; 可以使用event上preventDefault()来阻止默认行为发生
-    
+
+## day 22 绘画板
+    1. 尝试了H5新特性canvas, 使用标签canvas，给出标签属性width、height属性来规定大小，canvas.getContext('2d')来获取这个元素的 context
+    2. canvas监听mousedown、up、move行为，鼠标移动记录x，y坐标进行绘制，实现自由绘画需要圆和直线的同时绘制
+    3. 练习了canvas中圆和直线的绘制方式，clearRect（）来重置画布；
