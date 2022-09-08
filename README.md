@@ -112,3 +112,8 @@
     1. 尝试了H5新特性canvas, 使用标签canvas，给出标签属性width、height属性来规定大小，canvas.getContext('2d')来获取这个元素的 context
     2. canvas监听mousedown、up、move行为，鼠标移动记录x，y坐标进行绘制，实现自由绘画需要圆和直线的同时绘制
     3. 练习了canvas中圆和直线的绘制方式，clearRect（）来重置画布；
+
+## day 23 动态加载动画
+    1. 解锁了border-（top/left..)-color的使用，分别控制从边的两角到中心组成区域
+    2. 练习了animation编写，可以传递infinite来实现无限循环，传递第二个时间来时间延迟多少时间后执行
+    3. @keyframes自定义动画效果，0%-100%的不同时间段过度效果
