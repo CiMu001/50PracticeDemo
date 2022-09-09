@@ -117,3 +117,7 @@
     1. 解锁了border-（top/left..)-color的使用，分别控制从边的两角到中心组成区域
     2. 练习了animation编写，可以传递infinite来实现无限循环，传递第二个时间来时间延迟多少时间后执行
     3. @keyframes自定义动画效果，0%-100%的不同时间段过度效果
+
+
+## day 25 导航栏滚动改变
+    1. 在window下监听滚动变化，当window.scrollY（滚动距离top的距离）大于navbox.offsetHeight（元素像素高度）+自定义设置期望高度 后添加一个class来改变nav的样式
