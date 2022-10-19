@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: block;
+  color: #fff;
+}
+
+.addBtn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.addBtn i {
+  font-size: 14px;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.nodes-container {
+  width: 100%;
+  padding: 80px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.node-item {
+  width: 450px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.node-head {
+  height: 40px;
+  line-height: 40px;
+  background-color: #409d15;
+  text-align: right;
+}
+
+.node-head i {
+  font-size: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.node-body textarea {
+  width: 100%;
+  height: 460px;
+  padding: 2px;
+  resize: none;
+  font-size: 22px;
+  outline-color: #409d15;
+  background-color: beige;
+}
+
+.node-body textarea:focus {
+  background-color: #fff;
+}
+
+
+.base-btn:active {
+  transform: scale(1.1);
+}

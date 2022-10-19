@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #7373a7;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+
+.txt-box {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.speed-box {
+  position: absolute;
+  bottom: 30px;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  background-color: #ffe4c420;
+}
+
+input {
+  width: 50px;
+  padding: 5px 15px;
+  padding-right: 0px;
+  background-color: #ffe4c430;
+  outline: none;
+  border: none;
+}

@@ -125,3 +125,10 @@
 
 ## day 26 双垂直块滑动
     1. 简简单单点击修改左右两边Y轴偏移，页面布局也是常用相对定位加绝对定位组合、、、
+
+## day28 gitbuh用户搜索
+    1. innnerHTML 不是一个函数，不要使用函数（）进行调用， 接收一个HTMLstring！
+    2. 使用代码引入 axios
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" crossorigin="anonymous"></script>
+    3. script crossorigin: anonymous 代表同域会带上cookie，跨域则不带上cookie
+    4. form表单的提交

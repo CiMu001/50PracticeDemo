@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../DAY27-ToastNotification/style.css">
+    <title>字符串生成器</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>字符串生成器</h2>
+      <div class="show-box">
+        <div class="show"></div>
+        <img id="copy" src="./copy.png">
+      </div>
+      <div class="str-length">
+        <label for="length">字符串长度</label>
+        <input id="strlen" type="number" value="16" max="21" min="1">
+      </div>
+      <div class="uppercase">
+        <label for="length">包含大写字符</label>
+        <input id="uppercase" type="checkbox" checked>
+      </div>
+      <div class="lowercase">
+        <label for="length">包含小写字符</label>
+        <input id="lowercase" type="checkbox" checked>
+      </div>
+      <div class="numbers">
+        <label for="length">包含数字字符</label>
+        <input id="numbers" type="checkbox" checked>
+      </div>
+      <div class="symbols">
+        <label for="length">包含特殊字符</label>
+        <input id="symbols" type="checkbox" checked>
+      </div>
+      <button id="generator">生成</button>
+    </div>
+    <div class="toasts"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
