@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.count, .end, body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.num {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 250px;
+  height: 70px;
+  overflow: hidden;
+  font-size: 60px;
+  color: aqua;
+}
+
+.num span {
+  position: absolute;
+  transform: rotate(120deg);
+  transform-origin: bottom center;
+}
+
+.num span.in {
+  animation: goIn 0.5s ease-in-out;
+}
+
+.num span.out {
+  animation: goOut 0.5s ease-in-out;
+}
+.txt {
+  font-size: 30px;
+}
+
+.go {
+  font-size: 60px;
+  animation: gogo 0.3s infinite;
+}
+
+.end button {
+  padding: 10px 30px;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  color: rebeccapurple;
+  cursor: pointer;
+  background-color: aqua;
+}
+
+.end button:active {
+  transform: scale(0.98);
+}
+
+.hide {
+  display: none;
+  animation: hide 0.2s ease-out forwards;
+}
+
+.show {
+  display: flex;
+  animation: show 0.5s ease-out forwards;
+}
+
+@keyframes goIn {
+  0% {
+    transform: rotate(120deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes goOut {
+  0% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  100%{
+    transform: rotate(-120deg);
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes gogo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.6);
+  }
+  100%{
+    transform: scale(1.2);
+  }
+}
