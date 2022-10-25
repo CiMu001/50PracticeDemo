@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 20px;
+  background-color: black;
+}
+
+.container {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.item {
+  width: 16px;
+  height: 16px;
+  background-color: rgb(29,29,29);
+  box-shadow: 0px 0px 2px rgb(0, 0, 0);
+  transition: 2s ease;
+}
+
+.item:hover{
+  transition-duration: 0s;
+}
+
+.size {
+  margin-top: 50px;
+  color: aliceblue;
+  font-size: 30px;
+}
+
+.size input {
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  width: 80px;
+}
