@@ -2,8 +2,6 @@ const codeItem = document.querySelectorAll('.item');
 
 codeItem[0].focus();
 
-
-
 codeItem.forEach((item, index) => {
     item.addEventListener('keydown', function(e){
         const val = e.key;
@@ -14,7 +12,7 @@ codeItem.forEach((item, index) => {
                     codeItem[index + 1].focus();
                 }
             }, 10);
-        }else if(val === 'Backspace' && codeItem[index - 1]) {
+        }else if(val === 'Backspace' && codeItem[index - 1] && !item.value) {
             setTimeout(() => {
                 codeItem[index - 1].focus();
             }, 10)
