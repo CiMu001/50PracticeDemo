@@ -104,7 +104,7 @@
 
 ## day 21 拖拽图片
     1. 尝试了H5新特性拖拽API, 使用标签属性draggable来开始拖拽功能
-    2. 拖拽元素监听:dragstart, dragend, 分别监听开始和结束, 使用setTiemout的执行顺序特性来实现拖拽开始后该元素本体消失,只显示拖拽中的
+    2. 拖拽元素监听:dragstart, dragend, 分别监听t拖拽开始和结束, 使用setTiemout的执行顺序特性来实现拖拽开始后该元素本体消失,只显示拖拽中的
     3. 元素可以通过dragover,dragenter,dragleave,drop监听拖拽时的在元素之上,进入元素,离开元素和放下;
     4. dragOver的默认行为是: 重置当前的拖拽动作为"none";  dragEnter默认动作是: 取消拖动; 可以使用event上preventDefault()来阻止默认行为发生
 

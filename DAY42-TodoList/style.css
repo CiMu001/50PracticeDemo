@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.container h1 {
+  color: rgb(179, 131, 226);
+  font-size: 5rem;
+  text-align: center;
+  opacity: 0.4;
+}
+
+.container .total {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.container .total span {
+  padding: 0 5px;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.container .total .all {
+  color: cornflowerblue;
+}
+
+.container .total .undone {
+  color: crimson;
+}
+
+.container .total .done {
+  color:mediumseagreen;
+}
+
+.container .todos {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.container .todos li {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .todos li label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.container .todos .checkinput {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.container .todos .txtinput {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  font-size: inherit;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.container .todos .txtinput:focus {
+  padding: 5px;
+  border: 1px solid rgb(179, 131, 226);
+  box-shadow: 0 0 3px rgb(179, 131, 226);
+}
+
+.container .todos .checkinput:checked~.txtinput {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.container .todos .tool i {
+  margin-left: 5px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.container .todos .tool .icon-edit.active {
+  color: cornflowerblue;
+}
+
+.container .addinput {
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  border: 1px solid rgb(179, 131, 226);
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgb(179, 131, 226);
+}
+
+.container .tip {
+  position: absolute;
+  display: inline-block;
+  width: 200px;
+  left: calc(100% + 50px);
+  top: 112px;
+  padding: 10px;
+  line-height: 1.5rem;
+  text-align: left;
+  font-size: 14px;
+  color: #999;
+  border: 1px solid rgb(179, 131, 226);
+  border-radius: 4px;
+}
+
+.container .tip:hover {
+  box-shadow: 1px 1px 3px rgb(179, 131, 226);
+}
+
+@media (max-width: 860px){
+  .container .tip {
+    display: none;
+  }
+}
