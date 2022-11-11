@@ -86,7 +86,9 @@ function switchPage() {
         index + 1 === curPage ? item.classList.add('curpage') : item.classList = '';
     })
 
-    total.innerHTML = `${curPage}/${pageAll}`;
+    if(total) {
+        total.innerHTML = `${curPage}/${pageAll}`;
+    }
 }
 
 //绘制分页器
