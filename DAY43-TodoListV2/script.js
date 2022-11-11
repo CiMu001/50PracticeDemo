@@ -1,30 +1,49 @@
 const todos = document.querySelector('.todos');
+const pagingUl = document.querySelector('.paging ul');
 const addinputel = document.querySelector('.addinput');
+
 let todosArr = JSON.parse(localStorage.getItem('todos')) ? 
 JSON.parse(localStorage.getItem('todos')) : [];
 
-todosArr.forEach(item => { addNewTodo(item); })
+const pageSize = 9;
+let pageAll = allPage(pageSize);
+let curPage = 1;
+
+todosArr.forEach((item, index) => { if(index>=9) {return}; addNewTodo(item); })
 
 totalize();
+paging();
 
+// 监听新增输入框回车事件
 addinputel.addEventListener('keydown', function(e){
     if(e.keyCode !== 13){
         return;
     }
+    const txt = this.value.trim();
+    if(txt === '') {
+        this.value = '';
+        return;
+    }
+
+    if(txt.length > 14){alert('超过14字将会显示不全！')}
+
     const newtodo = {
         id: todosArr.length + 1,
-        txt: this.value,
+        txt,
         state: false
     }
     todosArr.push(newtodo);
-    localStorage.setItem('todos', JSON.stringify(todosArr))
-    addNewTodo(todosArr[newtodo.id - 1]);
+    localStorage.setItem('todos', JSON.stringify(todosArr));
+    curPage = Math.ceil(todosArr.length / pageSize);
+    paging();
+    jumpPage(curPage);
+    totalize();
 
     this.value = '';
     this.focus();
 })
 
-
+// 计算统计信息
 function totalize() {
     const allEl = document.querySelector('.total .all');
     const undoneEl = document.querySelector('.total .undone');
@@ -40,6 +59,72 @@ function totalize() {
     doneEl.innerHTML = done;
 }
 
+function allPage() {
+    return Math.ceil(todosArr.length / pageSize)
+}
+
+// 页面跳转
+function jumpPage(pageNum) {
+    const showTods = todosArr.filter((item, index) => {
+        let satrt = (pageNum - 1) * 9;
+        let end = pageNum * 9;
+        if(index >= satrt && index <= end) {
+            return item;
+        }
+    });
+
+    drawtodos(showTods);
+    switchPage();
+}
+
+// 分页器页码切换
+function switchPage() {
+    const pageNumsEl = document.querySelectorAll('.paging ul li');
+    const total = document.querySelector('.paging ul span');
+
+    pageNumsEl.forEach((item, index) => {
+        index + 1 === curPage ? item.classList.add('curpage') : item.classList = '';
+    })
+
+    total.innerHTML = `${curPage}/${pageAll}`;
+}
+
+//绘制分页器
+function paging() {
+    pageAll = allPage(pageSize);
+    pagingUl.innerHTML = '';
+    if(pageAll < 2) { return; }
+
+    let i = 1;
+    while(i <= pageAll) {
+        const pageNumEl = document.createElement('li');
+        pageNumEl.innerHTML = i;
+        pagingUl.appendChild(pageNumEl);
+        i++;
+    }
+
+    const pageNumsEl = document.querySelectorAll('.paging ul li');
+    pageNumsEl.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            curPage = index + 1;
+            jumpPage(curPage);
+            switchPage();
+        })
+    });
+
+    const total = document.createElement('span');
+    total.innerHTML = `${curPage}/${pageAll}`;
+    pagingUl.appendChild(total);
+    switchPage();
+}
+
+// 绘制todos
+function drawtodos(todosArr) {
+    todos.innerHTML = '';
+    todosArr.forEach(item=> addNewTodo(item));
+}
+
+// 新增todo
 function addNewTodo(todo) {
     const newtodo = document.createElement('li');
     newtodo.innerHTML = `
@@ -62,18 +147,14 @@ function addNewTodo(todo) {
     const labelEl = newtodo.querySelector('label');
 
     editEl.addEventListener('click', function(){
-        if(todo.state) {
+        if(todo.state || !txtInputEl.disabled) {
             return;
         }
-        if(txtInputEl.disabled) {
-            txtInputEl.disabled = false;
-            txtInputEl.focus()
-            txtInputEl.selectionStart = txtInputEl.selectionEnd = txtInputEl.value.length;
-            editEl.classList.add('active');
-        } else {
-            txtInputEl.disabled = true;
-            editEl.classList.remove('active');
-        }
+
+        txtInputEl.disabled = false;
+        txtInputEl.focus()
+        txtInputEl.selectionStart = txtInputEl.selectionEnd = txtInputEl.value.length;
+        editEl.classList.add('active');
     });
 
     delEL.addEventListener('click', function() {
@@ -81,11 +162,13 @@ function addNewTodo(todo) {
     })
 
     txtInputEl.addEventListener('blur', function() {
-        if(this.disabled === false) {
-            txtInputEl.disabled = true;
-            updateTodo(todo.id, this.value, 'txt');
-            editEl.classList.remove('active');
+        if(this.disabled) {
+            return;
         }
+        
+        txtInputEl.disabled = true;
+        updateTodo(todo.id, this.value, 'txt');
+        editEl.classList.remove('active');
     })
 
     labelEl.addEventListener('mousedown', function(e) {
@@ -102,14 +185,14 @@ function addNewTodo(todo) {
         }
     })
 
-    checkinputEl.addEventListener('input', function(){
+    checkinputEl.addEventListener('input', function(e){
         updateTodo(todo.id, this.checked, 'state');
         totalize();
+        paging();
     })
-
-    totalize();
 }
 
+// 更新todo
 function updateTodo(id, value, key) {
     todosArr = todosArr.map((item) => {
         if(item.id === id) {
@@ -120,6 +203,7 @@ function updateTodo(id, value, key) {
     localStorage.setItem('todos', JSON.stringify(todosArr))
 }
 
+// 删除todo
 function deleteTodo(id, el) {
     if(confirm('确实删除?')) {
         todosArr = todosArr.filter(item => item.id !== id);
@@ -128,4 +212,9 @@ function deleteTodo(id, el) {
     }
 
     totalize();
+    if(todosArr.length < ((curPage - 1) * pageSize) + 1) {
+        curPage--;
+        paging();
+        jumpPage(curPage);
+    }
 }
